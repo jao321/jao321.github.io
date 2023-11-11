@@ -1,0 +1,81 @@
+---
+layout: default
+---
+{% if page.title == "Blog" %}
+  {%  assign current = site.time | date: "%m/%Y" %}
+{% else %}
+  {%  assign current = page.date  %}
+{% endif %}
+
+<body class="halftone">
+  <div class="window-blog">
+
+    <img src="{{ base_url }}/assets/windows_head.png" alt="" class="windows_head">
+    <div class="windows-name">BLOG</div>
+    <div  style="margin-top: 3%;">
+      <div style="padding-left: 5%;
+                  width: 25%; 
+                  display: inline-block;
+                  font-family: Aldrich;"> 
+        Archive
+      </div>
+      <div style="width: 65%; 
+                  display: inline-block;">
+          Posts of the month of {{ current | date: "%B" }}
+      </div>
+      <hr style="width: 100%; 
+                background-color: black;
+                border: 1px;
+                border-style: solid;">
+    </div>
+
+    <div class="finder-left"> 
+      {% assign counter = 0 %}
+      {% for post in site.posts %}
+        {% assign thisyear = post.date | date: "%B %Y" %}
+        {% assign prevyear = post.previous.date | date: "%B %Y" %}
+        {% assign counter = counter | plus: 1 %}
+        {% if thisyear != prevyear %}
+          <li class="post-link">
+            <a style="color: black;" href="{{ base_url }}/jekyll/update/{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}">
+               <!-- "{{ base_url }}/jekyll/update/{{ thisyear }}/#{{ post.date | date:"%B %Y" }}"> -->
+            <img src="{{ base_url }}/assets/folder.png" 
+              style="display: block;
+                     height: 40px;
+                     margin-left: auto;
+                     margin-right: auto;"/>
+            {{ thisyear }} ({{ counter }})
+          </a></li>
+          {% assign counter = 0 %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div style="position:absolute;
+                height: 100%; 
+                width: 1px;
+                border-left: 2px solid black; 
+                border-right: 2px solid black;
+                margin-left: 30%;"></div>
+    
+    <div class="finder-right"> 
+      {%- for post in site.posts -%}
+        {% assign pdate = post.date |  date: "%m/%Y" %}
+        {% if pdate ==  current %} 
+            <a class="post-link" href="{{ post.url | relative_url }}">
+            <img src="{{ post.thumbnail }}" 
+                style="display: block;
+                        height: 50px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        border: solid black 2px;"/>
+            {{ post.filename | escape }}
+            </a>
+        {% endif %}
+      {%-endfor-%}
+    </div>
+    <!-- {{ content }} -->
+
+  </div>
+  
+</body>

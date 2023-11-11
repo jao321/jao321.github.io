@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-11T16:22:14+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gervasio, J</title><subtitle>Just another amalgamation of carbon in the world</subtitle><entry><title type="html">Welcome to Jay’s blog!</title><link href="http://localhost:4000/jekyll/update/2023/11/01/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jay’s blog!" /><published>2023-11-01T09:52:31+00:00</published><updated>2023-11-01T09:52:31+00:00</updated><id>http://localhost:4000/jekyll/update/2023/11/01/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2023/11/01/welcome-to-jekyll.html"><![CDATA[<p>To whom it may concern,</p>
+
+<p>This is my first post in this Blog page, which I may or may not continue to update.</p>
+
+<p>My initial thought is to just blab about things that makes me curious, maybe complain a bit about some issues. It might look a bit like a newsletter, but with no news, and it’s not a letter.</p>
+
+<p>In any case, if you would like to know more about bioinformatics, I might also right some tutorials. Again, let’s keep the expectations where they belong.</p>
+
+<p>Thank you for joining me on this exciting adventure.</p>
+
+<p>Jay :D</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[To whom it may concern,]]></summary></entry></feed>
