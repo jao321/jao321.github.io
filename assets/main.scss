@@ -180,6 +180,9 @@
     border-style: solid;
     border-color: black;
     background-color: rgba(255, 255, 255,1);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: auto;
 }
 
 .windows-content{
