@@ -4,7 +4,7 @@ layout: default
 <body class="halftone"></body>
   <div class="window-main-post">
    
-    <img src="{{ base_url }}/assets/window_blog.png" alt="" class="windows_head">
+    <img src="{{ site.baseurl }}/assets/window_blog.png" alt="" class="windows_head">
     <time class="windows-name" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {{ page.date | date: date_format }}

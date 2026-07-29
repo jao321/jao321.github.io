@@ -10,7 +10,7 @@ layout: default
 <body class="halftone">
   <div class="window-blog">
 
-    <img src="{{ base_url }}/assets/windows_head.png" alt="" class="windows_head">
+    <img src="{{ site.baseurl }}/assets/windows_head.png" alt="" class="windows_head">
     <div class="windows-name">BLOG</div>
     <div  style="margin-top: 3%;">
       <div style="padding-left: 5%;
@@ -37,9 +37,9 @@ layout: default
         {% assign counter = counter | plus: 1 %}
         {% if thisyear != prevyear %}
           <li class="post-link">
-            <a style="color: black;" href="{{ base_url }}/jekyll/update/{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}">
-               <!-- "{{ base_url }}/jekyll/update/{{ thisyear }}/#{{ post.date | date:"%B %Y" }}"> -->
-            <img src="{{ base_url }}/assets/folder.png" 
+            <a style="color: black;" href="{{ site.baseurl }}/jekyll/update/{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}">
+               <!-- "{{ site.baseurl }}/jekyll/update/{{ thisyear }}/#{{ post.date | date:"%B %Y" }}"> -->
+            <img src="{{ site.baseurl }}/assets/folder.png"
               style="display: block;
                      height: 40px;
                      margin-left: auto;

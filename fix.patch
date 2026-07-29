@@ -1,0 +1,277 @@
+Only in patch_work: .github
+Only in patch_work: .gitignore
+diff -ru '--exclude=.git' '--exclude=Gemfile.lock' '--exclude=_site' jao321.github.io/Gemfile patch_work/Gemfile
+--- jao321.github.io/Gemfile	2026-07-29 07:00:33.309315625 +0000
++++ patch_work/Gemfile	2026-07-29 07:01:16.637179201 +0000
+@@ -1,33 +1,15 @@
+ source "https://rubygems.org"
+-# Hello! This is where you manage which Jekyll version is used to run.
+-# When you want to use a different version, change it below, save the
+-# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
+-#
+-#     bundle exec jekyll serve
+-#
+-# This will help ensure the proper Jekyll version is running.
+-# Happy Jekylling!
+-gem "jekyll", "~> 4.3.2"
+-# This is the default theme for new Jekyll sites. You may change this to anything you like.
+-gem "minima", "~> 2.5"
+-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
+-# uncomment the line below. To upgrade, run `bundle update github-pages`.
+-# gem "github-pages", group: :jekyll_plugins
+-# If you have any plugins, put them here!
++
++gem "github-pages", group: :jekyll_plugins
++
+ group :jekyll_plugins do
+   gem "jekyll-feed", "~> 0.12"
+ end
+ 
+-# Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
+-# and associated library.
+ platforms :mingw, :x64_mingw, :mswin, :jruby do
+   gem "tzinfo", ">= 1", "< 3"
+   gem "tzinfo-data"
+ end
+ 
+-# Performance-booster for watching directories on Windows
+ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+-
+-# Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
+-# do not have a Java counterpart.
+ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
+diff -ru '--exclude=.git' '--exclude=Gemfile.lock' '--exclude=_site' jao321.github.io/_includes/footer.html patch_work/_includes/footer.html
+--- jao321.github.io/_includes/footer.html	2026-07-29 07:00:33.309315625 +0000
++++ patch_work/_includes/footer.html	2026-07-29 07:01:24.349820483 +0000
+@@ -7,12 +7,12 @@
+     left: 1%;
+     bottom: 0%;
+     display: flex;">
+-      <a href="mailto:jao.321@gmail.com"><img src="{{ base-url }}/assets/email_up.png" class="button-gmail" ></a>
+-      <a href="https://www.twitter.com/jao321" target="_blank"><img src="{{ base-url }}/assets/twitter_up.png" class="button-twitter" ></a>
+-      <a href="https://www.github.com/jao321" target="_blank"><img src="{{ base-url }}/assets/github_up.png" class="button-github"></a>
+-      <a href="www.linkedin.com/in/joaodgervasio" target="_blank"><img src="{{ base-url }}/assets/Linkedin_up.png" class="button-Linkedin"></a>
++      <a href="mailto:jao.321@gmail.com"><img src="{{ site.baseurl }}/assets/email_up.png" class="button-gmail" ></a>
++      <a href="https://www.twitter.com/jao321" target="_blank"><img src="{{ site.baseurl }}/assets/twitter_up.png" class="button-twitter" ></a>
++      <a href="https://www.github.com/jao321" target="_blank"><img src="{{ site.baseurl }}/assets/github_up.png" class="button-github"></a>
++      <a href="www.linkedin.com/in/joaodgervasio" target="_blank"><img src="{{ site.baseurl }}/assets/Linkedin_up.png" class="button-Linkedin"></a>
+       <!-- 
+-      <img src="{{ base-url }}/assets/email_up.png" class="button-footer"> -->
++      <img src="{{ site.baseurl }}/assets/email_up.png" class="button-footer"> -->
+     </p>
+ 
+ 
+diff -ru '--exclude=.git' '--exclude=Gemfile.lock' '--exclude=_site' jao321.github.io/_layouts/blog.html patch_work/_layouts/blog.html
+--- jao321.github.io/_layouts/blog.html	2026-07-29 07:00:33.313082096 +0000
++++ patch_work/_layouts/blog.html	2026-07-29 07:01:24.359787230 +0000
+@@ -10,7 +10,7 @@
+ <body class="halftone">
+   <div class="window-blog">
+ 
+-    <img src="{{ base_url }}/assets/windows_head.png" alt="" class="windows_head">
++    <img src="{{ site.baseurl }}/assets/windows_head.png" alt="" class="windows_head">
+     <div class="windows-name">BLOG</div>
+     <div  style="margin-top: 3%;">
+       <div style="padding-left: 5%;
+@@ -37,9 +37,9 @@
+         {% assign counter = counter | plus: 1 %}
+         {% if thisyear != prevyear %}
+           <li class="post-link">
+-            <a style="color: black;" href="{{ base_url }}/jekyll/update/{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}">
+-               <!-- "{{ base_url }}/jekyll/update/{{ thisyear }}/#{{ post.date | date:"%B %Y" }}"> -->
+-            <img src="{{ base_url }}/assets/folder.png" 
++            <a style="color: black;" href="{{ site.baseurl }}/jekyll/update/{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}">
++               <!-- "{{ site.baseurl }}/jekyll/update/{{ thisyear }}/#{{ post.date | date:"%B %Y" }}"> -->
++            <img src="{{ site.baseurl }}/assets/folder.png"
+               style="display: block;
+                      height: 40px;
+                      margin-left: auto;
+diff -ru '--exclude=.git' '--exclude=Gemfile.lock' '--exclude=_site' jao321.github.io/_layouts/home.html patch_work/_layouts/home.html
+--- jao321.github.io/_layouts/home.html	2026-07-29 07:00:33.313218528 +0000
++++ patch_work/_layouts/home.html	2026-07-29 07:01:24.356319484 +0000
+@@ -9,10 +9,10 @@
+ 
+     
+     <div class="window-main-post">
+-      <img src="{{ base_url }}/assets/windows_head.png" alt="" class="windows_head">
++      <img src="{{ site.baseurl }}/assets/windows_head.png" alt="" class="windows_head">
+ 
+       <div class="windows-content">
+-        <img src="{{ base_url }}/assets/pixelated_st_gilles.png" alt="" class="headshot_ish">
++        <img src="{{ site.baseurl }}/assets/pixelated_st_gilles.png" alt="" class="headshot_ish">
+         <div style="font-size: 5vw;">
+           Joao (Jay) Gervasio 
+         </div>
+@@ -34,7 +34,7 @@
+ 
+     <div class="window-bottom-home">
+       
+-      <img src="{{ base_url }}/assets/window_2.png" alt="" class="windows_head">
++      <img src="{{ site.baseurl }}/assets/window_2.png" alt="" class="windows_head">
+       
+       <div class="windows-content">
+         C tier gamer <br>
+diff -ru '--exclude=.git' '--exclude=Gemfile.lock' '--exclude=_site' jao321.github.io/_layouts/post.html patch_work/_layouts/post.html
+--- jao321.github.io/_layouts/post.html	2026-07-29 07:00:33.313218528 +0000
++++ patch_work/_layouts/post.html	2026-07-29 07:01:24.362776047 +0000
+@@ -4,7 +4,7 @@
+ <body class="halftone"></body>
+   <div class="window-main-post">
+    
+-    <img src="{{ base_url }}/assets/window_blog.png" alt="" class="windows_head">
++    <img src="{{ site.baseurl }}/assets/window_blog.png" alt="" class="windows_head">
+     <time class="windows-name" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+       {{ page.date | date: date_format }}
+diff -ru '--exclude=.git' '--exclude=Gemfile.lock' '--exclude=_site' jao321.github.io/art.md patch_work/art.md
+--- jao321.github.io/art.md	2026-07-29 07:00:33.389272617 +0000
++++ patch_work/art.md	2026-07-29 07:01:24.372174429 +0000
+@@ -5,22 +5,22 @@
+ ---
+ 
+ <div class="window-visual">
+-    <img src="{{ base_url }}/assets/window_2.png" alt="" class="windows_head">
++    <img src="{{ site.baseurl }}/assets/window_2.png" alt="" class="windows_head">
+     <div class="windows-name-2">VISUAL</div>
+-    <img src="{{ base_url }}/assets/Group 1 (3).png" alt="drawings_and_collage" style="padding:10%;max-height: 20em;">
++    <img src="{{ site.baseurl }}/assets/Group 1 (3).png" alt="drawings_and_collage" style="padding:10%;max-height: 20em;">
+ 
+ </div>
+ 
+ <div class="window-performance">
+-    <img src="{{ base_url }}/assets/window_art.png" alt="" class="windows_head">
++    <img src="{{ site.baseurl }}/assets/window_art.png" alt="" class="windows_head">
+     <div class="windows-name">PERFORM</div>
+-    <img src="{{ base_url }}/assets/sharks.jpeg" alt="musical_theatre" style="padding:5%;padding-left:30%;max-height: 15em;">
++    <img src="{{ site.baseurl }}/assets/sharks.jpeg" alt="musical_theatre" style="padding:5%;padding-left:30%;max-height: 15em;">
+ 
+ 
+ </div>
+ 
+ <div class="window-audio">
+-    <img src="{{ base_url }}/assets/window_2.png" alt="" class="windows_head">
++    <img src="{{ site.baseurl }}/assets/window_2.png" alt="" class="windows_head">
+     <div class="windows-name-2">AUDIO</div>
+     <iframe style="padding:20%;" src="https://open.spotify.com/embed/show/0nWmvZMRQhx2I7REt0mJqW?utm_source=generator&theme=0" width="70%" height="50%" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+ 
+diff -ru '--exclude=.git' '--exclude=Gemfile.lock' '--exclude=_site' jao321.github.io/assets/main.scss patch_work/assets/main.scss
+--- jao321.github.io/assets/main.scss	2026-07-29 07:00:33.445180189 +0000
++++ patch_work/assets/main.scss	2026-07-29 07:01:24.375260475 +0000
+@@ -1,7 +1,7 @@
+ ---
+ ---
+ 
+-@import "{{ site.theme }}";
++@import "minima";
+ 
+ .site-header {
+     position: fixed;
+@@ -160,7 +160,7 @@
+ 
+ 
+ .window-main-post::-webkit-scrollbar-thumb {
+-    background-image: url("{{ base_url }}/assets/middle_scroll.png");
++    background-image: url("{{ site.baseurl }}/assets/middle_scroll.png");
+     background-position: center, center;
+     background-repeat: no-repeat, no-repeat;
+     background-size: 80%;
+diff -ru '--exclude=.git' '--exclude=Gemfile.lock' '--exclude=_site' jao321.github.io/blog.md patch_work/blog.md
+--- jao321.github.io/blog.md	2026-07-29 07:00:33.453180189 +0000
++++ patch_work/blog.md	2026-07-29 07:01:28.501845520 +0000
+@@ -3,20 +3,3 @@
+ title: Blog
+ permalink: /blog/
+ ---
+-<div class="finder-right"> 
+-      {%- for post in site.posts -%}
+-        {% assign pdate = post.date |  date: "%m/%Y" %}
+-        {%  assign current = site.time | date: "%m/%Y" %}
+-        {% if pdate ==  current %} 
+-            <a class="post-link" href="{{ post.url | relative_url }}">
+-            <img src="{{ post.thumbnail }}" 
+-                style="display: block;
+-                        height: 50px;
+-                        margin-left: auto;
+-                        margin-right: auto;
+-                        border: solid black 2px;"/>
+-            {{ post.filename | escape }}
+-            </a>
+-        {% endif %}
+-      {%-endfor-%}
+-    </div>
+\ No newline at end of file
+diff -ru '--exclude=.git' '--exclude=Gemfile.lock' '--exclude=_site' jao321.github.io/publications.md patch_work/publications.md
+--- jao321.github.io/publications.md	2026-07-29 07:00:33.453180189 +0000
++++ patch_work/publications.md	2026-07-29 07:01:24.368819508 +0000
+@@ -5,7 +5,7 @@
+ ---
+ 
+ <div class="window-publication">
+-    <img src="{{ base_url }}/assets/window_art.png" alt="" class="head-pub">
++    <img src="{{ site.baseurl }}/assets/window_art.png" alt="" class="head-pub">
+     <div class="windows-name">Publication</div>
+     <div class="tools-pub">
+         <div style="height:45%; top: 5%; width:100%;font-family: 'Courier New', Courier, monospace;">
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,6 @@
++_site/
++.sass-cache/
++.jekyll-cache/
++.jekyll-metadata
++vendor/
++Gemfile.lock
+diff --git a/.github/workflows/jekyll-gh-pages.yml b/.github/workflows/jekyll-gh-pages.yml
+new file mode 100644
+--- /dev/null
++++ b/.github/workflows/jekyll-gh-pages.yml
+@@ -0,0 +1,47 @@
++name: Deploy Jekyll site to GitHub Pages
++
++on:
++  push:
++    branches: ["main"]
++  workflow_dispatch:
++
++permissions:
++  contents: read
++  pages: write
++  id-token: write
++
++concurrency:
++  group: "pages"
++  cancel-in-progress: false
++
++jobs:
++  build:
++    runs-on: ubuntu-latest
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v4
++      - name: Setup Ruby
++        uses: ruby/setup-ruby@v1
++        with:
++          ruby-version: '3.1'
++          bundler-cache: true
++      - name: Setup Pages
++        id: pages
++        uses: actions/configure-pages@v4
++      - name: Build with Jekyll
++        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
++        env:
++          JEKYLL_ENV: production
++      - name: Upload artifact
++        uses: actions/upload-pages-artifact@v3
++
++  deploy:
++    environment:
++      name: github-pages
++      url: ${{ steps.deployment.outputs.page_url }}
++    runs-on: ubuntu-latest
++    needs: build
++    steps:
++      - name: Deploy to GitHub Pages
++        id: deployment
++        uses: actions/deploy-pages@v4

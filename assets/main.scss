@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "{{ site.theme }}";
+@import "minima";
 
 .site-header {
     position: fixed;
@@ -160,7 +160,7 @@
 
 
 .window-main-post::-webkit-scrollbar-thumb {
-    background-image: url("{{ base_url }}/assets/middle_scroll.png");
+    background-image: url("{{ site.baseurl }}/assets/middle_scroll.png");
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
     background-size: 80%;

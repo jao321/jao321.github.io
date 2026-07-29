@@ -5,7 +5,7 @@ permalink: /publications/
 ---
 
 <div class="window-publication">
-    <img src="{{ base_url }}/assets/window_art.png" alt="" class="head-pub">
+    <img src="{{ site.baseurl }}/assets/window_art.png" alt="" class="head-pub">
     <div class="windows-name">Publication</div>
     <div class="tools-pub">
         <div style="height:45%; top: 5%; width:100%;font-family: 'Courier New', Courier, monospace;">
