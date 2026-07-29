@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Welcome to Jay's blog!"
-date:   2023-11-01 10:52:31 +0100
+title:  "Como ele é emocionado!"
+date:   2026-07-29 10:52:31 +0100
 categories: jekyll update
-thumbnail: ₍₍⚞(˶ˆᗜˆ˵)⚟⁾⁾
-filename: "Welcome.txt"
+thumbnail: ಥ﹏ಥ #"/assets/classic-car-tours.png"
+filename: "Ele é emocionado.txt"
 ---
 To whom it may concern,
 

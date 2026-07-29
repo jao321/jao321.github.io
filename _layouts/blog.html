@@ -37,7 +37,8 @@ layout: default
         {% assign counter = counter | plus: 1 %}
         {% if thisyear != prevyear %}
           <li class="post-link">
-            <a style="color: black;" href="{{ site.baseurl }}/jekyll/update/{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}">
+            <!-- <a style="color: black;" href="{{ site.baseurl }}/jekyll/update/{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}"> -->
+             <a style="color: black;" href="{{ site.baseurl }}/blog/?month={{ post.date | date: "%Y-%m" }}">
                <!-- "{{ site.baseurl }}/jekyll/update/{{ thisyear }}/#{{ post.date | date:"%B %Y" }}"> -->
             <img src="{{ site.baseurl }}/assets/folder.png"
               style="display: block;
@@ -58,23 +59,24 @@ layout: default
                 border-right: 2px solid black;
                 margin-left: 30%;"></div>
     
-    <div class="finder-right"> 
+    <div class="finder-right" id="finder-right">
       {%- for post in site.posts -%}
-        {% assign pdate = post.date |  date: "%m/%Y" %}
-        {% if pdate ==  current %} 
-            <a class="post-link" href="{{ post.url | relative_url }}">
-            <img src="{{ post.thumbnail }}" 
-                style="display: block;
-                        height: 50px;
-                        margin-left: auto;
-                        margin-right: auto;
-                        border: solid black 2px;"/>
-            {{ post.filename | escape }}
-            </a>
-        {% endif %}
-      {%-endfor-%}
+      <a class="post-link" href="{{ post.url | relative_url }}"
+        data-month="{{ post.date | date: "%Y-%m" }}">
+        <p><strong>{{ post.thumbnail }}</strong></p>
+        {{ post.filename | escape }}
+      </a>
+      {%- endfor -%}
     </div>
-    <!-- {{ content }} -->
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const selected = params.get("month") || "{{ site.time | date: '%Y-%m' }}";
+      document.querySelectorAll(".finder-right .post-link").forEach(el => {
+        el.style.display = el.dataset.month === selected ? "" : "none";
+      });
+    </script>
+
 
   </div>
   
